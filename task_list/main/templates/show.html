@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Page</title>
+</head>
+<body>
+    <table style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th style="border: 1px solid black;">Title</th>
+            <th style="border: 1px solid black;">Body</th>
+            <th style="border: 1px solid black;">Status</th>
+            <th style="border: 1px solid black;">Button</th>
+        </tr>
+        {% for i in tasks_data %}
+        <tr>
+            <th style="border: 1px solid black;">{{ i.title }}</th>
+            <th style="border: 1px solid black;">{{ i.body }}</th>
+            <th style="border: 1px solid black;">{{ i.status }}</th>
+            <th style="border: 1px solid black;">
+            <a href="{{i.get_absolute_url}}">
+                <button type="button">Complete</button>
+            </a></th>
+        </tr>
+        {% endfor %}
+    </table>
+    <br><br><br>
+    <a href="add">Add</a>
+</body>
+</html>
